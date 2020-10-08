@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/jquery.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+function sub(){
+	$.ajax({
+		url : "1.html",
+		type:"get",
+		success : function(data) { 
+			console.log(data);
+			//string->json {사과: "3", 배: "5"}
+			var obj= new Object();
+			obj = JSON.parse(data);
+			obj.사과="3";
+			obj.배="5";
+			delete obj.포도;
+			console.log(obj);
+			
+			//json->string {"사과":"3","배":"5"}
+			var result = JSON.stringify(obj);
+			$("#text1").val(result);
+			console.log(result);
+			form1.submit();
+		}, error : function() {
+			alert("fail");
+		}
+	});
+}
+</script>
+</head>
+<body>
+<form name="form1" action="3.jsp" method="get">
+	<input type = "text" id = "text1" name = "json"/>
+	<input type="button" value="버튼" onclick="sub();">
+</form>
+</body>
+</html>
