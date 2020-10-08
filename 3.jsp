@@ -13,9 +13,9 @@
 	obj= JSON.stringify(<%=obj1%>);
 	$("#text1").text(obj);
 	console.log(obj);
-	var apple=<%=obj1%>.사과;
-	var pear=<%=obj1%>.배;
-	document.write("사과는 "+apple+"개 배는"+pear+"개");
+	var obj1=<%=obj1%>.사과;
+	var obj2=<%=obj1%>.배;
+	document.write("사과는 "+obj1+"개 배는"+obj2+"개");
 </script>
 </head>
 <body>
