@@ -11,7 +11,7 @@
 <script>
 	var obj= new Object();
 	obj= JSON.stringify(<%=obj1%>);
-	$("#text1").text(obj);
+	$("#text2").text(obj);
 	console.log(obj);
 	var apple=<%=obj1%>.사과;
 	var pear=<%=obj1%>.배;
@@ -19,6 +19,6 @@
 </script>
 </head>
 <body>
-<p id="text1"></p>
+<p id="text2"></p>
 </body>
 </html>
